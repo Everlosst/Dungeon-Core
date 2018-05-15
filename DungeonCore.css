@@ -1,0 +1,72 @@
+/* basic styling */
+body { 
+   font-family: "Georgia";
+   font-size: 12px;
+   color: white;
+   background-color: Black;
+}
+
+ /*grid setup */
+.item1 { grid-area: title;
+  font-family: "Garamond";
+  font-size: 28px;
+  border-style: none ridge ridge none;
+    border-width: 4px;
+    border-color: white;
+}
+.item3 { grid-area: nav; 
+    border-style: none ridge none none;
+      border-width: 4px;
+      border-color: white;
+}
+.item4 { grid-area: main; }
+.item5 { grid-area: manaStat; 
+  border-style: none none ridge none;
+    border-width: 4px;
+    border-color: white;
+}
+.item6 { grid-area: adventureStat; 
+  border-style: none none ridge none;
+    border-width: 4px;
+    border-color: white;}
+.item7 { grid-area: rvrStat; 
+  border-style: none none ridge none;
+    border-width: 4px;
+    border-color: white;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-rows: 1fr 9fr;
+  grid-template-columns: 1.5fr 3fr 3fr 3fr;
+  grid-template-areas:
+    'title manaStat adventureStat rvrStat'
+    'nav main main main';
+  background-color: black;
+  justify-content: left;
+}
+.grid-container > div {
+  text-align: center;}
+
+
+/* Nav bar button looks */
+.tablinks {
+	background-color: black;
+	border: 1px solid white;
+	color: white;
+	text-align: center;
+	text-decoration: none;
+	font-size: 16px;
+	width: 80%;
+	border-radius: 5px;
+}
+   ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 11%;
+    background-color: black;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+    font-size: 30px;}

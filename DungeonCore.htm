@@ -1,0 +1,125 @@
+<!doctype HTML>
+<html>
+  <head>
+    <title>The Dungeon Core</title>
+    <link rel="stylesheet" href="DungeonCore.css">
+    <script src="DungeonCore.js"></script>
+  </head>
+  <body>
+  
+
+<!-- Main grid and content -->
+<div class="grid-container">
+  <div class="item1"> <!-- Title -->
+    <p>The <br> Dungeon Core</p>
+  </div>
+  <div class="item5"> <!-- Mana on Status Bar -->
+    <br><br>
+    <div style="font-size: 15px"><u>Mana</u></div>
+    <br>
+    <p>Current: <span id="untapped"></span> &emsp;&emsp; Total: <span id="manaTotal"></span></p>
+    <p>Passive Gain: <span id="passiveManaGain"></span></p>
+  </div>
+  <div class="item6"> <!-- Adventurers on Status Bar -->
+    <div style="font-size: 20px;">
+      <u>Status</u></div>
+      <br>
+    <div style="font-size: 15px">
+      <u>Adventurers</u></div>
+      <br>
+    <p>Current: <span id="adventCur"></span> &emsp;&emsp; Max: <span id="adventMax"></span></p>
+    <p>Delving: <span id+"delving"></span></p>
+  </div>  
+  <div class="item7"> <!-- RvR on Status Bar -->
+    <br><br>
+    <div style="font-size: 15px"><u>Risk vs Reward</u></div>
+    <br>
+    <p>Ratio: <span id="rvr"></span> 
+  </div>
+  <div class="item3"> <!-- Start of Nav Menu -->
+    <div class="tab"><ul>
+      <li>
+        <button class="tablinks" onclick="openScreen(event, 'dungeonLO')">
+          <strike>Dungeon Layout</strike>
+        </button>
+      </li>
+      <li>
+        <button class="tablinks" onclick="openScreen(event, 'encounters')">
+          <strike>Encounters</strike>
+        </button>
+      </li>
+      <li>
+        <button class="tablinks" onclick="openScreen(event, 'creatureLab')" id="defaultOpen">
+          <strike>Creature Lab</strike>
+        </button>
+      </li>
+      <li>
+        <button class="tablinks" onclick="openScreen(event, 'creatureMan')">
+          <strike>Creature Management</strike>
+        </button>
+      </li>
+      <li>
+        <button class="tablinks" onclick="openScreen(event, 'loot')">
+          <strike>Loot</strike>
+        </button>
+      </li>
+      <li>
+        <button class="tablinks" onclick="openScreen(event, 'dungeonUpg')">
+          <strike>Dungeon Upgrades</strike>
+        </button>
+      </li>
+      <li>
+        <button class="tablinks" onclick="openScreen(event, 'advent')">
+          <strike>Adventurers</strike>
+        </button>
+      </li>
+      <li>
+        <button class="tablinks" onclick="openScreen(event, 'town')">
+          <strike>Town</strike>
+        </button>
+      </li>
+      <li>
+        <button class="tablinks" onclick="openScreen(event, 'corruption')">
+          <strike>Corruption</strike>
+        </button>
+      </li>
+    </ul></div>
+  </div>  
+  <div class="item4"><!-- Main window, divided by nav tabs -->
+    <div id="dungeonLO" class="tabcontent">
+      <h3>Dungeon Layout</h3>
+    </div>
+    <div id="encounters" class="tabcontent">
+      <h3>Encounters</h3>
+    </div>
+    <div id="creatureLab" class="tabcontent">
+      <h3>Creature Lab</h3>
+    </div>
+    <div id="creatureMan" class="tabcontent">
+      <h3>Creature Management</h3>
+    </div>
+    <div id="loot" class="tabcontent">
+      <h3>Loot</h3>
+    </div>
+    <div id="dungeonUpg" class="tabcontent">
+      <h3>Dungeon Upgrade</h3>
+    </div>
+    <div id="advent" class="tabcontent">
+      <h3>Adventurers</h3>
+    </div>
+    <div id="town" class="tabcontent">
+      <h3>Town</h3>
+    </div>
+    <div id="corruption" class="tabcontent">
+      <h3>Corruption</h3>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+  </body>
+</html>
