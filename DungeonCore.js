@@ -1,15 +1,16 @@
+/* "use strict"; */
  // Initialization
  window.onload = function () {
-   startTab();}
+   startTab();};
 function startTab() {
   document.getElementById("defaultOpen").click(); // Initial nav bar click
   setInterval(gameTimer, 1000); // Game Timer 
   }
-function gameTimer () {
+function gameTimer () { // Timer function triggers
 	refresh();
 	passiveMana();
 }
-function refresh() {
+function refresh() { // Status bar updates
 	document.getElementById("manaTotal").innerHTML = Math.ceil(mana, 2); //Updating Status Bar
 	document.getElementById("passiveManaGain").innerHTML = passiveManaRate;
   }
@@ -42,13 +43,52 @@ function passiveMana() {
   mana += passiveManaRate;
   }
 
-//Families
-var insectFam = {
-	status: "available", level: 0, class: "family"};
-var mammalFam = {
-	status: "available", level: 0, class: "family"};
-var goblinFam = {
-	status: "unavailable", level: 0, class: "family"};
-var slimeFam = {
-	status: "unavailable", level: 0, class: "family"};
+
+//Families and base monster tree
+var data = {
+  familiesArray: [
+    {status: "available", level: 0, class: "family", species: "Insect"},
+    {status: "available", level: 0, class: "family", species: "Mammal"},
+    {status: "unavailable", level: 0, class: "family", species: "Goblin"},
+    {status: "unavailable", level: 0, class: "family", species: "Slime"},
+  ]
+};
+
+//Dropdown population
+var dropdown = document.querySelectorAll('.dropdown');
+document.addEventListener("DOMContentLoaded", function() {
+  for(x=0; x<dropdown.length; x++) {
+    populateDropDown(
+      dropdown[x].dataset.state,        // Get state from data attr
+      dropdown[x],                      // Pass the dropdown DOM element
+      data[dropdown[x].dataset.array],  // Reference local data object above using variable
+      dropdown[x].dataset.type          // Get type from data attr
+    );
+    console.log("Dropdown loop")
+  }
+});
+
+function populateDropDown(state, dropdown, array, textType) {
+	for (i = 0; i < array.length; i++) {
+    if (array[i].status== state) {
+			var option = document.createElement ("option");
+			document.getElementById(dropdown.id).add(option);
+			option.text = array[i][textType];
+		}
+  }
+}
+
+
+			
+			
+			
+			
+			
+			
+			
+			
+
+
+
+
 

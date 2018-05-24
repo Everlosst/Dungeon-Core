@@ -4,6 +4,7 @@
     <title>The Dungeon Core</title>
     <link rel="stylesheet" href="DungeonCore.css">
     <script src="DungeonCore.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Almendra SC' rel='stylesheet'>
   </head>
   <body>
   
@@ -11,30 +12,35 @@
 <!-- Main grid and content -->
 <div class="grid-container">
   <div class="item1"> <!-- Title -->
-    <p>The <br> Dungeon Core</p>
+    The <br> Dungeon Core
   </div>
-  <div class="item5"> <!-- Mana on Status Bar -->
-    <br><br>
-    <div style="font-size: 15px"><u>Mana</u></div>
-    <br>
-    <p>Current: <span id="untapped"></span> &emsp;&emsp; Total: <span id="manaTotal"></span></p>
-    <p>Passive Gain: <span id="passiveManaGain"></span></p>
-  </div>
-  <div class="item6"> <!-- Adventurers on Status Bar -->
-    <div style="font-size: 20px;">
-      <u>Status</u></div>
-      <br>
-    <div style="font-size: 15px">
-      <u>Adventurers</u></div>
-      <br>
-    <p>Current: <span id="adventCur"></span> &emsp;&emsp; Max: <span id="adventMax"></span></p>
-    <p>Delving: <span id+"delving"></span></p>
-  </div>  
-  <div class="item7"> <!-- RvR on Status Bar -->
-    <br><br>
-    <div style="font-size: 15px"><u>Risk vs Reward</u></div>
-    <br>
-    <p>Ratio: <span id="rvr"></span> 
+  <div class="item5"> <!-- Status Bar -->
+    <table id="topBar">
+      <tr>
+        <th colspan="6">Status</th>
+      </tr>
+      <tr>
+        <td colspan="2"><u>Mana</u></td>
+        <td colspan="2"><u>Adventurers</u></td>
+        <td colspan="2"><u>Risk vs Reward</u></td>
+      </tr>
+      <tr>
+        <td>Current: <span id="untapped"></span></td>
+        <td>Total: <span id="manaTotal"></span></td>
+        <td>Current: <span id="adventCur"></span></td>
+        <td>Max: <span id="adventMax"></span></td>
+        <td>Ratio: <span id="rvr"></span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Passive Gain: <span id="passiveManaGain"></span></td>
+        <td></td>
+        <td>Delving: <span id+"delving"></span></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
   </div>
   <div class="item3"> <!-- Start of Nav Menu -->
     <div class="tab"><ul>
@@ -50,7 +56,7 @@
       </li>
       <li>
         <button class="tablinks" onclick="openScreen(event, 'creatureLab')" id="defaultOpen">
-          <strike>Creature Lab</strike>
+          Creature Lab
         </button>
       </li>
       <li>
@@ -85,32 +91,47 @@
       </li>
     </ul></div>
   </div>  
+  
   <div class="item4"><!-- Main window, divided by nav tabs -->
-    <div id="dungeonLO" class="tabcontent">
+    <div id="dungeonLO" class="tabcontent"><!-- Dungeon Layout screen -->
       <h3>Dungeon Layout</h3>
     </div>
-    <div id="encounters" class="tabcontent">
+    <div id="encounters" class="tabcontent"><!-- Encounters Screen -->
       <h3>Encounters</h3>
     </div>
-    <div id="creatureLab" class="tabcontent">
-      <h3>Creature Lab</h3>
+    <div id="creatureLab" class="tabcontent"><!-- Creature Lab Screen -->
+      <table id= "familySelectTable"><!-- Family select Table -->
+        <tr>
+          <td>
+            Monster family:<br>
+            <select id="familyChoiceDD" class="dropdown" data-state="available" data-array="familiesArray" data-type="species">
+            </select>
+          </td>
+          <td colspan="4"><span class= "familyFlavorText"></span></td>
+        </tr>
+        <tr>
+          <td colspan="5">
+            <button id="familySelectButton" <!-- onclick="familySelect()" -->Select</button>
+          </td>
+        </tr>
+      </table>
     </div>
-    <div id="creatureMan" class="tabcontent">
+    <div id="creatureMan" class="tabcontent"><!-- Creature Management Screen -->
       <h3>Creature Management</h3>
     </div>
-    <div id="loot" class="tabcontent">
+    <div id="loot" class="tabcontent"><!-- Loot Screen -->
       <h3>Loot</h3>
     </div>
-    <div id="dungeonUpg" class="tabcontent">
+    <div id="dungeonUpg" class="tabcontent"><!-- Dungeon Upgrade Screen -->
       <h3>Dungeon Upgrade</h3>
     </div>
-    <div id="advent" class="tabcontent">
+    <div id="advent" class="tabcontent"><!-- Adventurers Screen -->
       <h3>Adventurers</h3>
     </div>
-    <div id="town" class="tabcontent">
+    <div id="town" class="tabcontent"><!-- Town Screen -->
       <h3>Town</h3>
     </div>
-    <div id="corruption" class="tabcontent">
+    <div id="corruption" class="tabcontent"><!-- Corruption Screen -->
       <h3>Corruption</h3>
     </div>
   </div>
