@@ -1,10 +1,11 @@
-/* "use strict"; */
+"use strict";
  // Initialization
  window.onload = function () {
    startTab();};
 function startTab() {
   document.getElementById("defaultOpen").click(); // Initial nav bar click
   setInterval(gameTimer, 1000); // Game Timer 
+  runDropDownPop();
   }
 function gameTimer () { // Timer function triggers
 	refresh();
@@ -55,8 +56,8 @@ var data = {
 };
 
 //Dropdown population
-var dropdown = document.querySelectorAll('.dropdown');
-document.addEventListener("DOMContentLoaded", function() {
+function runDropDownPop () {
+  var dropdown = document.querySelectorAll('.dropdown');
   for(x=0; x<dropdown.length; x++) {
     populateDropDown(
       dropdown[x].dataset.state,        // Get state from data attr
@@ -65,8 +66,8 @@ document.addEventListener("DOMContentLoaded", function() {
       dropdown[x].dataset.type          // Get type from data attr
     );
     console.log("Dropdown loop")
-  }
-});
+    }
+}
 
 function populateDropDown(state, dropdown, array, textType) {
 	for (i = 0; i < array.length; i++) {
